@@ -1,0 +1,162 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 2,
+  "settings": {
+    "appearanceTools": false,
+    "layout": {
+      "contentSize": "var(--content-width)",
+      "wideSize": "var(--alignwide-width)"
+    },
+    "color": {
+      "palette": [
+        {
+          "slug": "primary",
+          "color": "var(--gds-color-primary)",
+          "name": "Primary"
+        },
+        {
+          "slug": "secondary",
+          "color": "var(--gds-color-secondary)",
+          "name": "Secondary"
+        },
+        {
+          "slug": "white",
+          "color": "var(--gds-color-white)",
+          "name": "White"
+        },
+        {
+          "slug": "black",
+          "color": "var(--gds-color-black)",
+          "name": "Black"
+        }
+      ],
+      "duotone": [],
+      "gradients": [],
+      "link": false,
+      "custom": false,
+      "customDuotone": false,
+      "customGradient": false,
+      "defaultPalette": false,
+      "defaultGradients": false,
+      "defaultDuotone": false
+    },
+    "spacing": {
+      "customSpacingSize": false,
+      "padding": false,
+      "margin": false,
+      "blockGap": null,
+      "units": ["px", "%", "em", "rem", "vw", "vh"]
+    },
+    "border": {
+      "color": false,
+      "radius": false,
+      "style": false,
+      "width": false
+    },
+    "typography": {
+      "letterSpacing": false,
+      "textTransform": false,
+      "customFontSize": false,
+      "textDecoration": false,
+      "lineHeight": false,
+      "fontWeight": false,
+      "fontStyle": false,
+      "fluid": false,
+      "dropCap": false,
+      "fontSizes": [
+        {
+          "name": "S Body",
+          "size": "var(--gds-body-s-font-size)",
+          "slug": "s-body"
+        },
+        {
+          "name": "M Body",
+          "size": "var(--gds-body-m-font-size)",
+          "slug": "m-body"
+        },
+        {
+          "name": "L Body",
+          "size": "var(--gds-body-l-font-size)",
+          "slug": "l-body"
+        }
+      ]
+    },
+    "blocks": {
+      "core/heading": {
+        "color": {
+          "custom": false,
+          "palette": []
+        },
+        "typography": {
+          "fontSizes": [
+            {
+              "name": "XS Heading",
+              "size": "var(--gds-heading-xs-font-size)",
+              "slug": "xs-heading"
+            },
+            {
+              "name": "S Heading",
+              "size": "var(--gds-heading-s-font-size)",
+              "slug": "s-heading"
+            },
+            {
+              "name": "M Heading",
+              "size": "var(--gds-heading-m-font-size)",
+              "slug": "m-heading"
+            },
+            {
+              "name": "L Heading",
+              "size": "var(--gds-heading-l-font-size)",
+              "slug": "l-heading"
+            },
+            {
+              "name": "XL Heading",
+              "size": "var(--gds-heading-xl-font-size)",
+              "slug": "xl-heading"
+            }
+          ]
+        }
+      },
+      "core/paragraph": {
+        "color": {
+          "custom": false,
+          "palette": []
+        }
+      },
+      "core/button": {
+        "appearanceTools": false,
+        "border": {
+          "radius": false
+        },
+        "typography": {
+          "fontSizes": [
+            {
+              "name": "S Button",
+              "size": "var(--gds-button-s-font-size)",
+              "slug": "s-button"
+            },
+            {
+              "name": "M Button",
+              "size": "var(--gds-button-m-font-size)",
+              "slug": "m-button"
+            },
+            {
+              "name": "L Button",
+              "size": "var(--gds-button-l-font-size)",
+              "slug": "l-button"
+            }
+          ]
+        }
+      },
+      "core/pullquote": {
+        "appearanceTools": false,
+        "border": {
+          "color": false,
+          "radius": false,
+          "style": false,
+          "width": false
+        }
+      }
+    }
+  }
+}

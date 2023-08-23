@@ -1,0 +1,42 @@
+@mixin base {
+  all: unset;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  outline: none;
+  padding: 9px 16px;
+  font-size: 18px;
+  background: var(--gds-color-white);
+  color: var(--gds-color-black);
+  box-shadow: var(--gds-box-shadow);
+  border: 1px solid #eee;
+  border-radius: var(--gds-border-radius);
+  transition: box-shadow 0.1s ease-out;
+
+  &:hover {
+    box-shadow: var(--gds-box-shadow--hover);
+  }
+
+  &:focus {
+    box-shadow: var(--gds-box-shadow--active);
+    border-color: var(--gds-color-black);
+    outline: none;
+  }
+}
+
+@mixin label {
+  cursor: default;
+  margin-bottom: 4px;
+  display: block;
+}
+
+@mixin select {
+  appearance: none; // safari
+  background-image: svg-load("../node_modules/@fortawesome/fontawesome-free/svgs/solid/chevron-down.svg");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 16px) center;
+  background-size: 14px;
+  padding-right: calc(16px + 14px + 4px);
+}

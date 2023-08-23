@@ -1,0 +1,17 @@
+@use "@/common/breakpoints" as *;
+
+.wp-block-image {
+  @include mq($from: medium) {
+    &.alignleft {
+      float: left;
+      margin-block-start: 0.35em;
+      margin-right: var(--grid-gutter);
+    }
+
+    &.alignright {
+      float: right;
+      margin-block-start: 0.35em;
+      margin-left: var(--grid-gutter);
+    }
+  }
+}

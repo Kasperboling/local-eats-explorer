@@ -1,0 +1,118 @@
+@use "@/common/breakpoints" as *;
+@use "@/common/functions" as *;
+@use "@/config";
+
+:root {
+  // Block vertical gutters
+  --block-gutter: #{sloped-size(24px, 32px)};
+  --block-gutter-s: #{sloped-size(16px, 24px)};
+  --block-gutter-l: #{sloped-size(32px, 40px)};
+
+  // Layout
+  --viewport-gutter: 15px;
+  --alignwide-width: var(--grid-column-12);
+
+  @include mq($from: medium) {
+    --content-width: var(--grid-column-8);
+  }
+
+  @if config.$alignfull-max-width {
+    --alignfull-width: #{config.$alignfull-max-width};
+  } @else {
+    --alignfull-width: unset;
+  }
+}
+
+// The root container only
+.is-root-container {
+  // Add a viewport gutter
+  padding-left: var(--viewport-gutter);
+  padding-right: var(--viewport-gutter);
+}
+
+.is-root-container,
+.entry-content {
+  // First block has a top gutter unless it's full aligned in which case it's
+  // considered a banner
+  > :first-child:not(.alignfull),
+  > .alignfull:first-child + :not(.alignfull) {
+    margin-block-start: var(--block-gutter-l);
+  }
+}
+
+// Any container that can contain blocks or inner blocks.
+.wp-block-group,
+.wp-block-cover__inner-container,
+.wp-block-media-text__content,
+.wp-block-column,
+.entry-content,
+.is-root-container {
+  // Each blocks default styling
+  > * {
+    max-width: var(--content-width);
+    margin-left: auto;
+    margin-right: auto;
+
+    // Default vertical gutter
+    margin-block-start: var(--block-gutter-start, var(--block-gutter));
+    margin-block-end: var(--block-gutter-end, var(--block-gutter));
+
+    &.has-text-align-right {
+      margin-right: 0;
+    }
+
+    &.has-text-align-left {
+      margin-left: 0;
+    }
+  }
+
+  // Alignfull stretches to the viewport width up to a point when it gets centered.
+  .alignfull {
+    max-width: var(--alignfull-width);
+
+    // Negate the container padding so it stretches to viewport width.
+    margin-left: calc(var(--viewport-gutter) * -1) !important;
+    margin-right: calc(var(--viewport-gutter) * -1) !important;
+
+    // Once alignfull limit has been reached, center the block
+    @if config.$alignfull-max-width {
+      @include mq($from: config.$alignfull-max-width) {
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+    }
+
+    // If it's the last child, remove the gutter with the footer
+    &.has-background:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  // Align has a 12 column width with a viewport gutter
+  .alignwide {
+    max-width: var(--alignwide-width);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  > :first-child {
+    margin-top: 0;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Use a larger gutter around full aligned blocks with a background. This is
+// overridden on a per block basis.
+.alignwide,
+.alignfull {
+  margin-top: var(--block-gutter-l);
+  margin-bottom: var(--block-gutter-l);
+}
+
+// Adjacent full aligned blocks should not have a gutter.
+.alignfull.has-background + .alignfull.has-background {
+  margin-top: calc(var(--block-gutter-l) * -1);
+}

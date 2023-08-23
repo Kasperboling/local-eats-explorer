@@ -1,0 +1,35 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/web/app/themes/gds/"
+    schedule:
+      interval: "weekly"
+    allow:
+      - dependency-type: "production"
+    registries:
+      - fortawesome
+
+  - package-ecosystem: "composer"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    registries:
+      - satispress
+
+  - package-ecosystem: "composer"
+    directory: "/web/app/themes/gds/"
+    schedule:
+      interval: "weekly"
+    registries:
+      - satispress
+
+registries:
+  satispress:
+    type: composer-repository
+    url: https://satispress.generodigital.com/satispress/
+    username: ${{ secrets.SATISPRESS_API_KEY }}
+    password: ${{ secrets.SATISPRESS_PASSWORD }}
+  fortawesome:
+    type: npm-registry
+    url: //npm.fontawesome.com/
+    token: ${{ secrets.NPM_FONTAWESOME_AUTH_TOKEN  }}

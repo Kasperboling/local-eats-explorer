@@ -1,0 +1,16 @@
+@use "mixins";
+
+.wp-block-gds-media-card {
+  @include mixins.card;
+
+  &__media {
+    @include mixins.media;
+  }
+
+  &__content {
+    @include mixins.content;
+
+    --block-gutter: 12px;
+    --gds-heading-margin-end: var(--block-gutter);
+  }
+}

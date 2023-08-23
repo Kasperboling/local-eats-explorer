@@ -1,0 +1,39 @@
+@import "~modern-normalize/modern-normalize.css";
+
+html {
+  @media (prefers-reduced-motion: no-preference) {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  // Hide overflowing margins.
+  overflow-x: hidden;
+
+  // Improve render performance by disabling some gestures.
+  touch-action: manipulation;
+
+  // https://www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
+  text-size-adjust: 100%;
+}
+
+button {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+img {
+  // Get rid of gap under images
+  display: inline-block;
+  vertical-align: middle;
+
+  // Grid defaults to get images and embeds to work properly
+  max-width: 100%;
+  height: auto;
+}
+
+table {
+  border-collapse: collapse;
+}

@@ -1,0 +1,2 @@
+
+<?php echo $__env->make('archive', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /var/www/html/web/app/themes/gds/resources/views/home.blade.php ENDPATH**/ ?>

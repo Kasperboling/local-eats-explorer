@@ -1,0 +1,15 @@
+.wp-block-gallery {
+  --wp--style--gallery-gap-default: var(--grid-gutter);
+
+  > .wp-element-caption {
+    margin-top: calc(-1 * var(--wp--style--gallery-gap-default) + var(--gds-caption-gutter));
+  }
+
+  &.has-nested-images figure.wp-block-image figcaption {
+    position: static;
+    margin-top: 8px;
+    padding-bottom: 0;
+    background: transparent;
+    color: var(--gds-caption-color);
+  }
+}

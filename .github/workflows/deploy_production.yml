@@ -1,0 +1,29 @@
+name: Deploy to Production
+on:
+  workflow_dispatch:
+    inputs:
+      log_level:
+        description: 'Log level (-v, -vv, -vvv)'
+        required: true
+        default: '-vv'
+      ref:
+        description: 'Optional tag to checkout'
+        required: false
+        default: ''
+
+jobs:
+  deploy:
+    uses: ./.github/workflows/deploy.yml
+    secrets: inherit
+    with:
+      environment: 'production'
+      ref: ${{ inputs.ref }}
+      log_level: ${{ inputs.log_level }}
+  e2e:
+    needs: deploy
+    uses: ./.github/workflows/e2e.yml
+    with:
+      url: 'https://gdsbedrock.kinsta.cloud'
+  lighthouse:
+    needs: deploy
+    uses: ./.github/workflows/lighthouse.yml

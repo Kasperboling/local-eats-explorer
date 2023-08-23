@@ -1,0 +1,15 @@
+.wp-block-cover {
+  box-sizing: border-box;
+  color: var(--gds-color-white);
+  padding: var(--grid-gutter);
+
+  &.alignfull {
+    padding-left: var(--viewport-gutter);
+    padding-right: var(--viewport-gutter);
+  }
+
+  &__inner-container {
+    // Override Gutenberg weirdness
+    color: inherit !important;
+  }
+}

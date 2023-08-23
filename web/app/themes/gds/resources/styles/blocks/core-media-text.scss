@@ -1,0 +1,38 @@
+@use "@/common/breakpoints" as *;
+
+.wp-block-media-text {
+  --media-text-gutter: var(--viewport-gutter);
+
+  @media (width >= 600px) {
+    --media-text-gutter: var(--grid-column-1);
+  }
+
+  & &__content {
+    padding: var(--media-text-gutter);
+  }
+
+  // When aligning to top/bottom, it's expected that content is aligned with media
+  &.is-vertically-aligned-top:not(.has-background) &__content,
+  &.is-vertically-aligned-bottom:not(.has-background) &__content {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  // Remove the outer gutter since there's a viewport gutter
+  &:not(.alignfull, .has-background) {
+    @media (width <= 600px) {
+      .wp-block-media-text__content {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+
+    &.has-media-on-the-right .wp-block-media-text__content {
+      padding-left: 0;
+    }
+
+    &:not(.has-media-on-the-right) .wp-block-media-text__content {
+      padding-right: 0;
+    }
+  }
+}

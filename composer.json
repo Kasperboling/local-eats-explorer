@@ -1,0 +1,163 @@
+{
+  "$schema": "https://raw.githubusercontent.com/composer/composer/main/res/composer-schema.json",
+  "name": "generoi/bedrock",
+  "type": "project",
+  "license": "MIT",
+  "description": "WordPress boilerplate with modern development tools, easier configuration, and an improved folder structure",
+  "homepage": "https://roots.io/bedrock/",
+  "authors": [
+    {
+      "name": "Scott Walkinshaw",
+      "email": "scott.walkinshaw@gmail.com",
+      "homepage": "https://github.com/swalkinshaw"
+    },
+    {
+      "name": "Ben Word",
+      "email": "ben@benword.com",
+      "homepage": "https://github.com/retlehs"
+    }
+  ],
+  "keywords": [
+    "bedrock", "composer", "roots", "wordpress", "wp", "wp-config"
+  ],
+  "support": {
+    "issues": "https://github.com/roots/bedrock/issues",
+    "forum": "https://discourse.roots.io/category/bedrock"
+  },
+  "repositories": [
+    { "type": "git", "url": "https://github.com/generoi/wp-cli-bundle.git" },
+    { "type": "composer", "url": "https://wpackagist.org" },
+    { "type": "composer", "url": "https://packagist.minasithil.genero.fi/" },
+    { "type": "composer", "url": "https://satispress.generodigital.com/satispress/" }
+  ],
+  "require": {
+    "php": ">=8.0",
+    "composer/installers": "^2.0",
+    "vlucas/phpdotenv": "^5.3.0",
+    "roots/wordpress": "^6.0",
+    "oscarotero/env": "^2.1.0",
+    "roots/wp-password-bcrypt": "^1.0",
+    "roots/wp-config": "^1.0",
+    "jjgrainger/posttypes": "~2.0",
+
+    "wpackagist-plugin/safe-svg": "^2.1",
+    "wpackagist-plugin/limit-login-attempts-reloaded": "^2.6.1",
+    "wpackagist-plugin/wp-sanitize-file-name-plus": "~1.0",
+
+    "wpackagist-plugin/wordpress-seo": "~20.0",
+    "wpackagist-plugin/google-tag-manager": "~1.0",
+    "wpackagist-plugin/redirection": "~5.0",
+
+    "wpackagist-plugin/show-environment-in-admin-bar": "^1.1",
+    "wpackagist-plugin/regenerate-thumbnails": "~3.0",
+    "wpackagist-plugin/debug-bar": "^1.0",
+    "wpackagist-plugin/debug-bar-remote-requests": "^0.1.2",
+    "jameelmoses/wordpress-kint-debugger": "^1.0",
+    "wpackagist-plugin/query-monitor": "^3.3",
+    "wpackagist-plugin/user-switching": "^1.5",
+
+    "wp-cli/wp-cli-bundle": "dev-feature/composer-version-range",
+    "kinsta/kinsta-mu-plugins": "^3.0",
+    "satispress/advanced-custom-fields-pro": "^6.0",
+    "satispress/gravityforms": "^2.4",
+    "roots/bedrock-autoloader": "^1.0",
+    "consolidation/robo": "^4.0",
+    "generoi/robo-genero": "^0.4",
+    "roots/acorn": "^3.0",
+    "log1x/navi": "^2.0",
+    "generoi/sage-nativeblock": "^0.3",
+    "inpsyde/wp-translation-downloader": "^2.3",
+    "satispress/polylang-pro": "^3.3",
+    "wpackagist-plugin/shortpixel-adaptive-images": "^3.5",
+    "stoutlogic/acf-builder": "^1.12",
+    "cweagans/composer-patches": "^1.7",
+    "spatie/laravel-google-fonts": "^1.2",
+    "generoi/genero-cmp": "^1.1",
+    "generoi/wp-image-resizer": "dev-master"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^3.4.2",
+    "brainmaestro/composer-git-hooks": "^3.0.0-alpha",
+    "deployer/deployer": "^7.0",
+    "generoi/deployer-genero": "^0.3",
+    "staabm/annotate-pull-request-from-checkstyle": "^1.5"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "platform": {
+      "php": "8.2.3"
+    },
+    "process-timeout": 0,
+    "theme-dir": "web/app/themes/gds",
+    "allow-plugins": {
+      "composer/installers": true,
+      "roots/wordpress-core-installer": true,
+      "inpsyde/wp-translation-downloader": true,
+      "cweagans/composer-patches": true
+    },
+    "prepend-autoloader": false
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "extra": {
+    "hooks": {
+      "pre-commit": "composer test",
+      "post-merge": "composer install:development"
+    },
+    "installer-paths": {
+      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin", "wpackagist-plugin/show-environment-in-admin-bar"],
+      "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
+      "web/app/themes/{$name}/": ["type:wordpress-theme"]
+    },
+    "wordpress-install-dir": "web/wp",
+    "wp-translation-downloader": {
+      "languages": [
+        "fi",
+        "sv_SE"
+      ],
+      "excludes": [
+        "generoi/*",
+        "satispress/*",
+        "jameelmoses/*",
+        "wpackagist-plugin/safe-svg",
+        "wpackagist-plugin/limit-login-attempts-reloaded",
+        "wpackagist-plugin/wp-sanitize-file-name-plus",
+        "wpackagist-plugin/google-tag-manager",
+        "wpackagist-plugin/redirection",
+        "wpackagist-plugin/show-environment-in-admin-bar",
+        "wpackagist-plugin/regenerate-thumbnails",
+        "wpackagist-plugin/debug-bar",
+        "wpackagist-plugin/debug-bar-remote-requests",
+        "wpackagist-plugin/query-monitor",
+        "wpackagist-plugin/user-switching"
+      ],
+      "languageRootDir": "web/app/languages"
+    },
+    "patches": {
+      "satispress/advanced-custom-fields-pro": {
+        "Fix get_block_wrapper_attributes not working with ACF preview": "./config/patches/acf-get_block_wrapper_attributes.patch"
+      }
+    }
+  },
+  "scripts": {
+    "post-create-project-cmd": "Generoi\\Robo\\Composer\\ComposerScript::postCreateProject",
+    "post-update-cmd": "php -r \"if (is_executable('vendor/bin/cghooks')) exec('vendor/bin/cghooks update');\"",
+    "test": "Generoi\\Robo\\Composer\\ComposerScript::test",
+    "ci": [
+      "composer validate --no-check-all",
+      "vendor/bin/phpcs --report=checkstyle | vendor/bin/cs2pr",
+      "(cd web/app/themes/gds; npm run ci:scripts --silent) | vendor/bin/cs2pr",
+      "(cd web/app/themes/gds; npm run ci:styles --silent) | vendor/bin/cs2pr"
+    ],
+    "build": "vendor/bin/robo build:production",
+    "install:development": [
+      "@composer install",
+      "vendor/bin/robo install:development",
+      "vendor/bin/cghooks update"
+    ],
+    "post-autoload-dump": [
+      "Roots\\Acorn\\ComposerScripts::postAutoloadDump"
+    ]
+  }
+}

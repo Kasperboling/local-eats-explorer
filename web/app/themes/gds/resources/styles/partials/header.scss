@@ -1,0 +1,169 @@
+@use "@/components/hamburger";
+@use "@/components/collapsed-search";
+@use "@/common/breakpoints" as *;
+
+.header {
+  padding-left: var(--viewport-gutter);
+  padding-right: var(--viewport-gutter);
+
+  &__inner-container {
+    display: grid;
+    width: 100%;
+    max-width: var(--alignwide-width);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__logo {
+    grid-area: logo;
+  }
+
+  &__navigation {
+    grid-area: navigation;
+  }
+
+  &__languages {
+    grid-area: languages;
+  }
+
+  &__search {
+    grid-area: search;
+
+    @include collapsed-search.styles;
+  }
+
+  &__menu-toggler {
+    grid-area: toggler;
+    justify-self: flex-end;
+  }
+}
+
+// Mobile
+@include mq($until: desktopmenu) {
+  :root {
+    --header-section-gutter: 24px;
+  }
+
+  body.is-menu-open {
+    overflow: hidden;
+  }
+
+  .header {
+    background-color: var(--gds-color-white);
+    transition: all 0.1s ease-out;
+    display: flex;
+
+    &__logo {
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+
+    &__inner-container {
+      grid-template:
+        "logo       toggler"
+        "navigation navigation"
+        "languages  languages"
+        "search     search";
+      grid-template-columns: auto auto;
+      grid-template-rows: auto 1fr auto auto;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &__menu-toggler-icon {
+      @include hamburger.base;
+
+      [aria-expanded="true"] > & {
+        @include hamburger.active;
+      }
+    }
+
+    &__logo img {
+      height: 28px;
+      width: auto;
+    }
+
+    &__languages {
+      margin-left: calc(-1 * var(--viewport-gutter));
+      margin-right: calc(-1 * var(--viewport-gutter));
+      padding-left: var(--viewport-gutter);
+      padding-right: var(--viewport-gutter);
+    }
+
+    &__search,
+    &__languages,
+    &__navigation {
+      display: none;
+    }
+
+    &.is-active {
+      height: 100vh;
+      height: 100dvh;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      z-index: 100000; /* higher than the admin menu */
+      background-color: var(--gds-color-white);
+
+      .header__search,
+      .header__navigation,
+      .header__languages {
+        display: block;
+      }
+
+      .header__search {
+        display: flex;
+        opacity: 1;
+        margin-top: var(--header-section-gutter);
+        margin-bottom: var(--header-section-gutter);
+      }
+
+      .header__navigation {
+        height: 100%;
+        margin-left: calc(-1 * var(--viewport-gutter));
+        margin-right: calc(-1 * var(--viewport-gutter));
+        overflow-y: auto;
+        border-bottom: solid 2px var(--gds-color-light-gray);
+        border-top: solid 2px var(--gds-color-light-gray);
+      }
+
+      .header__languages {
+        border-bottom: solid 2px var(--gds-color-light-gray);
+        padding-top: var(--header-section-gutter);
+        padding-bottom: var(--header-section-gutter);
+      }
+    }
+  }
+}
+
+// Desktop
+@include mq($from: desktopmenu) {
+  .header {
+    &__inner-container {
+      display: grid;
+      grid-template: "logo navigation languages search";
+      grid-template-columns: auto auto 1fr min-content;
+      gap: 24px;
+      align-items: center;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+
+    &__navigation {
+      display: block;
+    }
+
+    &__search {
+      display: inline-flex;
+    }
+
+    &__menu-toggler {
+      display: none;
+    }
+
+    &__languages {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}

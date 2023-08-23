@@ -1,0 +1,31 @@
+@use "~swiper/scss";
+@use "~swiper/scss/pagination";
+@use "~swiper/scss/navigation";
+@use "config" with ($is-editor: true);
+@use "common/base";
+@use "components";
+
+.wp-block {
+  max-width: var(--content-width);
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &[data-align="wide"] {
+    max-width: var(--alignwide-width);
+  }
+
+  &[data-align="full"] {
+    max-width: var(--alignfull-width);
+  }
+}
+
+// Disable links rendered in ACF blocks
+.acf-block-preview [href]:not([href^="#"]) {
+  pointer-events: none;
+}

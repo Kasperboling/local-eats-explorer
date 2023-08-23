@@ -1,0 +1,2 @@
+<h1 class="<?php echo e($classes ?? 'has-xl-heading-font-size'); ?>"><?php echo $page_title; ?></h1>
+<?php /**PATH /var/www/html/web/app/themes/gds/resources/views/partials/page-header.blade.php ENDPATH**/ ?>

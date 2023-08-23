@@ -1,0 +1,34 @@
+@use "@/config";
+@use "@/components/button" as button;
+
+.wp-block-button {
+  &__link,
+  &.is-style-outline &__link {
+    @include button.button;
+
+    &.has-white-background-color {
+      color: var(--gds-color-black);
+
+      &:hover {
+        box-shadow: inset 0 0 0 2px rgba(0 0 0 / 100%);
+      }
+    }
+  }
+
+  &.is-style-outline &__link {
+    @include button.outline;
+  }
+}
+
+// Override .has-custom-font-size which sets it to inherit.
+.has-s-button-font-size.has-s-button-font-size.has-s-button-font-size > .wp-block-button__link {
+  @include button.size-s;
+}
+
+.has-m-button-font-size.has-m-button-font-size.has-m-button-font-size > .wp-block-button__link {
+  @include button.size-m;
+}
+
+.has-l-button-font-size.has-l-button-font-size.has-l-button-font-size > .wp-block-button__link {
+  @include button.size-l;
+}

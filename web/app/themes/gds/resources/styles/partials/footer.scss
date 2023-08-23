@@ -1,0 +1,53 @@
+@use "common/breakpoints" as *;
+
+.content-info {
+  padding: 60px 20px;
+
+  .footer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+
+    &__menu {
+      &__navigation ul {
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      &__copyright {
+        margin-top: 24px;
+        text-align: center;
+      }
+    }
+
+    &__social li svg {
+      height: 33.6px;
+      width: auto;
+    }
+
+    &__logo img {
+      height: 100px;
+      width: auto;
+    }
+  }
+
+  @include mq($from: desktopmenu) {
+    padding: 80px 140px;
+
+    .footer {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      &__logo img {
+        height: 100px;
+        width: auto;
+      }
+    }
+  }
+}
