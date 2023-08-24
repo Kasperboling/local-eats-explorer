@@ -3,7 +3,7 @@
     <div class="footer__logo">
       <a href="{{ home_url('/') }}" rel="home" aria-label="{{ sprintf(__('%s frontpage', 'gds'), $siteName) }}">
         <img
-          src="{{ Roots\asset('images/logo.png')->uri() }}"
+          src="{{ Roots\asset('images/logo_footer.png')->uri() }}"
           alt=""
           title="{{ __('Go to frontpage', 'gds') }}"
           width="123"
