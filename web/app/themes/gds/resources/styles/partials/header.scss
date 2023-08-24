@@ -5,6 +5,7 @@
 .header {
   padding-left: var(--viewport-gutter);
   padding-right: var(--viewport-gutter);
+  background-color: var(--gds-color-lightest-gray);
 
   &__inner-container {
     display: grid;
