@@ -2,7 +2,7 @@
 
 @section('content')
   @if (have_posts())
-    @include('partials.page-header')
+    @include('partials.archive-header')
 
     {!! $content !!}
 

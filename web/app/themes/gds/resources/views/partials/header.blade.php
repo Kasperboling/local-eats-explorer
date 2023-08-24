@@ -74,21 +74,5 @@
       </div>
     </div>
     @endif
-
-    <form
-      action="{{ home_url('/') }}"
-      method="get"
-      role="search"
-      class="header__search"
-    >
-      <label for="s" class="sr-only">
-        {{ __('Search this site', 'gds') }}
-      </label>
-      <input slot="input" type="search" name="s" placeholder="{{ __('Search', 'gds') }}" autocomplete="off" />
-
-      <button type="submit" aria-label="{{ __('Search', 'gds') }}">
-        <i class="fa fa-solid fa-magnifying-glass"></i>
-      </button>
-    </form>
   </div>
 </header>

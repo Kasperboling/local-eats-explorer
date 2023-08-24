@@ -27,12 +27,6 @@
     grid-area: languages;
   }
 
-  &__search {
-    grid-area: search;
-
-    @include collapsed-search.styles;
-  }
-
   &__menu-toggler {
     grid-area: toggler;
     justify-self: flex-end;
@@ -63,8 +57,7 @@
       grid-template:
         "logo       toggler"
         "navigation navigation"
-        "languages  languages"
-        "search     search";
+        "languages  languages";
       grid-template-columns: auto auto;
       grid-template-rows: auto 1fr auto auto;
       align-items: center;
@@ -106,17 +99,9 @@
       z-index: 100000; /* higher than the admin menu */
       background-color: var(--gds-color-white);
 
-      .header__search,
       .header__navigation,
       .header__languages {
         display: block;
-      }
-
-      .header__search {
-        display: flex;
-        opacity: 1;
-        margin-top: var(--header-section-gutter);
-        margin-bottom: var(--header-section-gutter);
       }
 
       .header__navigation {
@@ -152,10 +137,6 @@
 
     &__navigation {
       display: block;
-    }
-
-    &__search {
-      display: inline-flex;
     }
 
     &__menu-toggler {

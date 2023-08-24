@@ -6,7 +6,38 @@
   --gds-color-lightest-gray: #F5F5F5;
   --gds-color-light-gray: #757575;
   --gds-color-mid-gray: #757575;
-  --gds-color-dark-gray: #333333;
+  --gds-color-dark-gray: #333;
+  --gds-color-success: #1fc900;
+  --gds-color-error: #df5c4e;
+}
+
+$color-names: "white",
+  "black",
+  "primary",
+  "secondary",
+  "lightest-gray",
+  "light-gray",
+  "mid-gray",
+  "dark-gray",
+  "success",
+  "error";
+
+@each $name in $color-names {
+  .has-#{$name}-background-color {
+    --block-color: var(--gds-color-white);
+    --block-background: var(--gds-color-#{$name});
+
+    background-color: var(--block-background) !important;
+    color: var(--block-color);
+  }
+}
+
+@each $name in $color-names {
+  .has-#{$name}-color {
+    --block-color: var(--gds-color-#{$name});
+
+    color: var(--block-color) !important;
+  }
 }
 
 .has-primary-background-color,

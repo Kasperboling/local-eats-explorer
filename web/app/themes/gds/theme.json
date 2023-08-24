@@ -28,6 +28,36 @@
           "slug": "black",
           "color": "var(--gds-color-black)",
           "name": "Black"
+        },
+        {
+          "slug": "lightest-gray",
+          "color": "var(--gds-color-lightest-gray)",
+          "name": "Lightest Gray"
+        },
+        {
+          "slug": "light-gray",
+          "color": "var(--gds-color-light-gray)",
+          "name": "Light Gray"
+        },
+        {
+          "slug": "mid-gray",
+          "color": "var(--gds-color-mid-gray)",
+          "name": "Mid Gray"
+        },
+        {
+          "slug": "dark-gray",
+          "color": "var(--gds-color-dark-gray)",
+          "name": "Dark Gray"
+        },
+        {
+          "slug": "success",
+          "color": "var(--gds-color-success)",
+          "name": "Success"
+        },
+        {
+          "slug": "error",
+          "color": "var(--gds-color-error)",
+          "name": "Error"
         }
       ],
       "duotone": [],

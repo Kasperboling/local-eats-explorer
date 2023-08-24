@@ -2,15 +2,11 @@
 
 <article @php(post_class('alignwide entry'))>
   <header class="entry__header">
-    @block('core/post-date', ['format' => 'd.m.Y'])
+    @include('partials.page-header')
     @block('gds/share')
   </header>
 
   <div class="entry__content entry-content">
-    @if (!str_contains(get_the_content(), '</h1>'))
-      @include('partials.page-header')
-    @endif
-
     @php(the_content())
   </div>
 

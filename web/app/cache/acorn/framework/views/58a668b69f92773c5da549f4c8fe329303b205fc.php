@@ -10,15 +10,7 @@
 
 <article <?php (post_class('alignwide entry')); ?>>
   <header class="entry__header">
-    
-                <?php echo render_block([
-                    'blockName' => 'core/post-date',
-                    'attrs' => array_merge(
-                        ['name' => 'core/post-date'],
-                        ['format' => 'd.m.Y']
-                    ),
-                ]); ?>
-            
+    <?php echo $__env->make('partials.page-header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     
                 <?php echo render_block([
                     'blockName' => 'gds/share',
@@ -31,10 +23,6 @@
   </header>
 
   <div class="entry__content entry-content">
-    <?php if(!str_contains(get_the_content(), '</h1>')): ?>
-      <?php echo $__env->make('partials.page-header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-    <?php endif; ?>
-
     <?php (the_content()); ?>
   </div>
 

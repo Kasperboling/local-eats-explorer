@@ -76,23 +76,6 @@
       </div>
     </div>
     <?php endif; ?>
-
-    <form
-      action="<?php echo e(home_url('/')); ?>"
-      method="get"
-      role="search"
-      class="header__search"
-    >
-      <label for="s" class="sr-only">
-        <?php echo e(__('Search this site', 'gds')); ?>
-
-      </label>
-      <input slot="input" type="search" name="s" placeholder="<?php echo e(__('Search', 'gds')); ?>" autocomplete="off" />
-
-      <button type="submit" aria-label="<?php echo e(__('Search', 'gds')); ?>">
-        <i class="fa fa-solid fa-magnifying-glass"></i>
-      </button>
-    </form>
   </div>
 </header>
 <?php /**PATH /var/www/html/web/app/themes/gds/resources/views/partials/header.blade.php ENDPATH**/ ?>
