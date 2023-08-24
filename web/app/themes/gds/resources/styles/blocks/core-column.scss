@@ -1,3 +1,25 @@
 .wp-block-column > :only-child {
   height: 100%;
 }
+
+.wp-block-column {
+  .testimonial-card {
+    span {
+      border-radius: 10px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -0.2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 31.5rem;
+        background-image: url("../../images/quote.svg");
+        z-index: 0;
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 50px;
+      }
+    }
+  }
+}

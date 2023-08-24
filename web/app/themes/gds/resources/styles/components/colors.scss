@@ -46,6 +46,8 @@ $color-names: "white",
   color: var(--gds-color-white);
 }
 
-.has-white-background-color {
+.has-white-background-color,
+.has-lightest-gray-background-color,
+.has-light-gray-background-color {
   color: var(--gds-color-black);
 }

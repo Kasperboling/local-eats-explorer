@@ -1,6 +1,6 @@
 <div <?php echo get_block_wrapper_attributes(['class' => 'grid']); ?>>
   <?php while($query->have_posts()): ?> <?php ($query->the_post()); ?>
-    <div class="cell <?php echo e($align === '' ? 'small:6' : 'small:6 large:4'); ?>">
+  <div class="cell <?php echo e($align === '' ? 'mobile:12' : 'mobile:12 medium:4 large:3'); ?> <?php echo e(((is_archive() || is_home()) && $counter === 0) ? 'featured-first-post' : ''); ?>">
       <?php echo $__env->first(['teasers.' . get_post_type(), 'teasers.teaser'], [
         'post' => get_post(),
         'className' => 'is-card'
