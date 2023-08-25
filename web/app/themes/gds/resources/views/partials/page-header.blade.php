@@ -1,4 +1,4 @@
-@block('core/cover')
+{{-- @block('core/cover')
 
 <a id="main-content" tabindex="-1"></a>
 
@@ -12,4 +12,4 @@
         </p>
     @endif
     </div>
-</div>
+</div> --}}

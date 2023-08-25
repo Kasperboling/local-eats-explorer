@@ -73,7 +73,11 @@
     "cweagans/composer-patches": "^1.7",
     "spatie/laravel-google-fonts": "^1.2",
     "generoi/genero-cmp": "^1.1",
-    "generoi/wp-image-resizer": "dev-master"
+    "generoi/wp-image-resizer": "dev-master",
+    "wpackagist-plugin/userswp": "1.2.3.21",
+    "wpackagist-plugin/ayecode-connect": "^1.2",
+    "wpackagist-plugin/hide-content-by-role-for-wpbakery": "^1.2",
+    "wpackagist-plugin/content-control": "^1.1"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.4.2",

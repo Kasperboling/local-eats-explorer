@@ -40,42 +40,16 @@
         </div>
       <?php endif; ?>
     </nav>
-
-    <?php if($current_language): ?>
-    <div
-      aria-label="<?php echo e(__('Language', 'gds')); ?>"
-      class="header__languages language-menu"
-    >
-      <toggle-button
-        class="language-menu__toggle"
-        aria-controls="language-menu"
-      >
-        <span aria-hidden="true">
-          <?php echo strtoupper(esc_html($current_language->slug)); ?>
-
-        </span>
-        <span class="sr-only"><?php echo e(__('Languages')); ?> </span>
-        <span class="language-menu__toggle__icon">
-          <i class="fa fa-solid fa-chevron-down"></i>
-        </span>
-      </toggle-button>
-
-      <div
-        class="language-menu__menu"
-        id="language-menu"
-      >
-        <?php $__currentLoopData = $languages; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-          <a
-            class="language-menu__link <?php echo e(($item->current_lang ) ? 'is-active': ''); ?>"
-            href="<?php echo e($item->url); ?>"
-          >
-            <?php echo esc_html($item->name); ?>
-
-          </a>
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-      </div>
+    <div class="header__account">
+      <a href="https://gdsbedrock.ddev.site/?page_id=130">
+        <img
+        src="<?php echo e(Roots\asset('../images/account.png')->uri()); ?>"
+        alt=""
+        loading="lazy"
+        aria-hidden="true"
+        />
+      </a>
     </div>
-    <?php endif; ?>
   </div>
 </header>
 <?php /**PATH /var/www/html/web/app/themes/gds/resources/views/partials/header.blade.php ENDPATH**/ ?>

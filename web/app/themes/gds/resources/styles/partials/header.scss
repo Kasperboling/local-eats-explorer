@@ -23,8 +23,8 @@
     grid-area: navigation;
   }
 
-  &__languages {
-    grid-area: languages;
+  &__account {
+    grid-area: account;
   }
 
   &__menu-toggler {
@@ -57,7 +57,7 @@
       grid-template:
         "logo       toggler"
         "navigation navigation"
-        "languages  languages";
+        "account  account";
       grid-template-columns: auto auto;
       grid-template-rows: auto 1fr auto auto;
       align-items: center;
@@ -127,7 +127,7 @@
   .header {
     &__inner-container {
       display: grid;
-      grid-template: "logo navigation languages search";
+      grid-template: "logo navigation account";
       grid-template-columns: auto auto 1fr min-content;
       gap: 24px;
       align-items: center;
@@ -143,7 +143,7 @@
       display: none;
     }
 
-    &__languages {
+    &__account {
       display: flex;
       justify-content: flex-end;
     }

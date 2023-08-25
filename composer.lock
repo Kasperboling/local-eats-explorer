@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "35e9198673d7ac14444df87b48cf06b6",
+    "content-hash": "fb4b4451a63d106c4df980e991c96d85",
     "packages": [
         {
             "name": "brick/math",
@@ -10953,6 +10953,42 @@
             "time": "2023-04-26T19:51:31+00:00"
         },
         {
+            "name": "wpackagist-plugin/ayecode-connect",
+            "version": "1.2.15",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/ayecode-connect/",
+                "reference": "tags/1.2.15"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/ayecode-connect.1.2.15.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/ayecode-connect/"
+        },
+        {
+            "name": "wpackagist-plugin/content-control",
+            "version": "1.1.10",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/content-control/",
+                "reference": "tags/1.1.10"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/content-control.1.1.10.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/content-control/"
+        },
+        {
             "name": "wpackagist-plugin/debug-bar",
             "version": "1.1.4",
             "source": {
@@ -11005,6 +11041,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/google-tag-manager/"
+        },
+        {
+            "name": "wpackagist-plugin/hide-content-by-role-for-wpbakery",
+            "version": "1.2.3",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/hide-content-by-role-for-wpbakery/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/hide-content-by-role-for-wpbakery.zip?timestamp=1675432325"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/hide-content-by-role-for-wpbakery/"
         },
         {
             "name": "wpackagist-plugin/limit-login-attempts-reloaded",
@@ -11149,6 +11203,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/user-switching/"
+        },
+        {
+            "name": "wpackagist-plugin/userswp",
+            "version": "1.2.3.21",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/userswp/",
+                "reference": "tags/1.2.3.21"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/userswp.1.2.3.21.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/userswp/"
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",

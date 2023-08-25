@@ -40,39 +40,15 @@
         </div>
       @endif
     </nav>
-
-    @if ($current_language)
-    <div
-      aria-label="{{ __('Language', 'gds') }}"
-      class="header__languages language-menu"
-    >
-      <toggle-button
-        class="language-menu__toggle"
-        aria-controls="language-menu"
-      >
-        <span aria-hidden="true">
-          {!! strtoupper(esc_html($current_language->slug)) !!}
-        </span>
-        <span class="sr-only">{{__('Languages')}} </span>
-        <span class="language-menu__toggle__icon">
-          <i class="fa fa-solid fa-chevron-down"></i>
-        </span>
-      </toggle-button>
-
-      <div
-        class="language-menu__menu"
-        id="language-menu"
-      >
-        @foreach ($languages as $item)
-          <a
-            class="language-menu__link {{ ($item->current_lang ) ? 'is-active': '' }}"
-            href="{{ $item->url }}"
-          >
-            {!! esc_html($item->name) !!}
-          </a>
-        @endforeach
-      </div>
+    <div class="header__account">
+      <a href="https://gdsbedrock.ddev.site/?page_id=130">
+        <img
+        src="{{ Roots\asset('../images/account.png')->uri() }}"
+        alt=""
+        loading="lazy"
+        aria-hidden="true"
+        />
+      </a>
     </div>
-    @endif
   </div>
 </header>
