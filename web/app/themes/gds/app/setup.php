@@ -200,3 +200,12 @@ add_filter('wp-image-resizer/rewriters', function (array $rewriters) {
         Urls::class,
     ]);
 });
+
+// Function to hide the admin bar for specific user roles
+function hide_admin_bar_for_specific_roles() {
+    $current_user = wp_get_current_user();
+    if (!in_array('administrator', $current_user->roles)) { // Replace 'role_name' with the actual role you want to target
+        add_filter('show_admin_bar', '__return_false');
+    }
+}
+add_action('init', 'App\\hide_admin_bar_for_specific_roles');
