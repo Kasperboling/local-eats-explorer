@@ -15,6 +15,7 @@ class ContentSingle extends Composer
      */
     protected static $views = [
         'content.single',
+        'content.restaurant'
     ];
 
     /**
@@ -34,7 +35,7 @@ class ContentSingle extends Composer
         return new WP_Query([
             'category__in' => wp_list_pluck(get_the_category($post->ID), 'term_id'),
             'post__not_in' => [$post->ID],
-            'post_type' => 'post',
+            'post_type' => get_post_type($post->ID),
             'posts_per_page' => 2,
             'post_status' => 'publish',
             'ignore_sticky_posts' => true,

@@ -14,7 +14,7 @@ register_block_type(asset('blocks/article-grid/block.json')->path(), [
             'posts_per_page' => get_field('posts_per_page') ?: 12,
             'orderby' => ['date'],
             'order' => 'DESC',
-            'post_type' => 'post',
+            'post_type' => get_field('post_type_select') ?: 'post',
             'ignore_sticky_posts' => false,
             'post_status' => 'publish',
             'paged' => get_field('use_pagination') ? (get_query_var('paged') ?: 1) : null,
@@ -65,6 +65,13 @@ $fields->addRadio('type', ['layout' => 'horizontal'])
     ])
         ->conditional('type', '==', 'automatic')
         ->setWidth('50%')
+        ->addSelect('post_type_select', [
+            'label' => 'Select Post Type',
+            'choices' => [
+                'post' => 'Post',
+                'restaurant' => 'Restaurant',
+            ],
+        ])
     ->setLocation('block', '==', 'gds/article-grid');
 
 if (function_exists('acf_add_local_field_group')) {

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fb4b4451a63d106c4df980e991c96d85",
+    "content-hash": "dc9bb4e0cba3523782026fb1a3e5dad7",
     "packages": [
         {
             "name": "brick/math",
@@ -6044,6 +6044,25 @@
             "homepage": "https://gravityforms.com"
         },
         {
+            "name": "satispress/gravityformsadvancedpostcreation",
+            "version": "1.3.3",
+            "dist": {
+                "type": "zip",
+                "url": "https://satispress.generodigital.com/satispress/gravityformsadvancedpostcreation/1.3.3",
+                "shasum": "1a0d8c478efd424ced23cc410a189522469c829f"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "authors": {
+                "name": "Gravity Forms",
+                "homepage": "https://gravityforms.com"
+            },
+            "description": "Allows you to create new posts through Gravity Forms.",
+            "homepage": "https://gravityforms.com"
+        },
+        {
             "name": "satispress/polylang-pro",
             "version": "3.4.3",
             "dist": {
@@ -11023,6 +11042,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/debug-bar-remote-requests/"
+        },
+        {
+            "name": "wpackagist-plugin/formidable",
+            "version": "6.4.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/formidable/",
+                "reference": "tags/6.4.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/formidable.6.4.2.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/formidable/"
         },
         {
             "name": "wpackagist-plugin/google-tag-manager",
