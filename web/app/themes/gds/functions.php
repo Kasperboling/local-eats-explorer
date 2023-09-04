@@ -65,12 +65,18 @@ collect(['setup', 'filters', 'admin', 'helpers'])
     });
 
 add_action('gform_after_submission_2', 'custom_action_after_apc', 10, 2);
+// (The _2 in the gform_after_submission is the form id.)
+
 function custom_action_after_apc($entry, $form)
 {
 
-    // If the Advanced Post Creation add-on is used, more than one post may be created for a form submission.
-    // The post ids are stored as an array in the entry meta.
-    $created_posts = gform_get_meta($entry['id'], 'gravityformsadvancedpostcreation_post_id');
+    // If the Advanced Post Creation add-on is used, more than one post
+    // may be created for a form submission.
+    // The Post-IDs are stored as an array in the entry meta.
+    $created_posts = gform_get_meta(
+        $entry['id'],
+        'gravityformsadvancedpostcreation_post_id'
+    );
 
     foreach ($created_posts as $post) {
         $post_id = $post['post_id'];
@@ -79,7 +85,9 @@ function custom_action_after_apc($entry, $form)
         $title = get_field('title', $post_id);
         // $title = 'nu ska vi testa';
         $featured_image_url = get_field('featured_image', $post_id);
-        // Update the post title.
+        // $featured_image_url
+
+        // Update the post-title.
         $post_data = array(
             'ID' => $post_id,
             'post_title' => $title,
@@ -87,14 +95,19 @@ function custom_action_after_apc($entry, $form)
 
         wp_update_post($post_data);
 
-        // Update the featured image.
-        if (! empty($featured_image_url)) {
-            // Download the image and set it as the featured image.
-            $image_id = custom_upload_featured_image($featured_image_url, $post_id);
-
-            // Set the featured image for the post.
-            set_post_thumbnail($post_id, $image_id);
+        // No featured image to update.
+        if (empty($featured_image_url)) {
+            continue;
         }
+
+        // Download the image and set it as the featured image.
+        $image_id = custom_upload_featured_image(
+            $featured_image_url,
+            $post_id
+        );
+
+        // Set the featured image for the post.
+        set_post_thumbnail($post_id, $image_id);
     }
 }
 
