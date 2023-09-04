@@ -63,3 +63,54 @@ collect(['setup', 'filters', 'admin', 'helpers'])
             );
         }
     });
+
+add_action('gform_after_submission_2', 'custom_action_after_apc', 10, 2);
+function custom_action_after_apc($entry, $form)
+{
+
+    // If the Advanced Post Creation add-on is used, more than one post may be created for a form submission.
+    // The post ids are stored as an array in the entry meta.
+    $created_posts = gform_get_meta($entry['id'], 'gravityformsadvancedpostcreation_post_id');
+
+    foreach ($created_posts as $post) {
+        $post_id = $post['post_id'];
+
+        // Get the title and featured image URL from the form fields.
+        $title = get_field('title', $post_id);
+        // $title = 'nu ska vi testa';
+        $featured_image_url = get_field('featured_image', $post_id);
+        // Update the post title.
+        $post_data = array(
+            'ID' => $post_id,
+            'post_title' => $title,
+        );
+
+        wp_update_post($post_data);
+
+        // Update the featured image.
+        if (! empty($featured_image_url)) {
+            // Download the image and set it as the featured image.
+            $image_id = custom_upload_featured_image($featured_image_url, $post_id);
+
+            // Set the featured image for the post.
+            set_post_thumbnail($post_id, $image_id);
+        }
+    }
+}
+
+// Function to upload and set a featured image from a URL.
+function custom_upload_featured_image($image_url, $post_id)
+{
+    require_once(ABSPATH . 'wp-admin/includes/file.php');
+    require_once(ABSPATH . 'wp-admin/includes/media.php');
+    require_once(ABSPATH . 'wp-admin/includes/image.php');
+
+    // Upload the image from the URL.
+    $attachment_id = media_sideload_image($image_url, $post_id, null, 'id');
+
+    if (! is_wp_error($attachment_id)) {
+        return $attachment_id;
+    }
+
+    return 0;
+}

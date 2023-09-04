@@ -3,23 +3,18 @@
                     'blockName' => 'gds/breadcrumb',
                     'attrs' => array_merge(
                         ['name' => 'gds/breadcrumb'],
-                        
                     ),
                 ]); ?>
-            
 
 <article <?php (post_class('alignwide entry')); ?>>
   <header class="entry__header">
     <?php echo $__env->make('partials.page-header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-    
                 <?php echo render_block([
                     'blockName' => 'gds/share',
                     'attrs' => array_merge(
                         ['name' => 'gds/share'],
-                        
                     ),
                 ]); ?>
-            
   </header>
 
   <div class="entry__content entry-content">

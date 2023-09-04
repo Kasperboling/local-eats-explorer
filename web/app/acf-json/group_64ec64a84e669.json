@@ -3,45 +3,9 @@
     "title": "Restaurant Info",
     "fields": [
         {
-            "key": "field_64ec64a8e4c4a",
-            "label": "website",
-            "name": "website",
-            "aria-label": "",
-            "type": "link",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "url"
-        },
-        {
-            "key": "field_64ec9438ae43d",
-            "label": "Content",
-            "name": "content",
-            "aria-label": "",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "rows": "",
-            "placeholder": "",
-            "new_lines": ""
-        },
-        {
-            "key": "field_64ec6646c470f",
-            "label": "Price range",
-            "name": "price_range",
+            "key": "field_64f2fbe430962",
+            "label": "Title",
+            "name": "title",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -54,7 +18,7 @@
             },
             "default_value": "",
             "maxlength": "",
-            "placeholder": "40-60€",
+            "placeholder": "",
             "prepend": "",
             "append": ""
         },
@@ -79,9 +43,9 @@
             "append": ""
         },
         {
-            "key": "field_64ec7330b4dcd",
-            "label": "Location",
-            "name": "location",
+            "key": "field_64ec6646c470f",
+            "label": "Price range",
+            "name": "price_range",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -94,7 +58,7 @@
             },
             "default_value": "",
             "maxlength": "",
-            "placeholder": "",
+            "placeholder": "40-60€",
             "prepend": "",
             "append": ""
         },
@@ -119,6 +83,62 @@
             "new_lines": ""
         },
         {
+            "key": "field_64ec9438ae43d",
+            "label": "Content",
+            "name": "content",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": "",
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_64ec7330b4dcd",
+            "label": "Location",
+            "name": "location",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_64ec64a8e4c4a",
+            "label": "website",
+            "name": "website",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url"
+        },
+        {
             "key": "field_64ec9d6945899",
             "label": "opening hours",
             "name": "opening_hours",
@@ -139,11 +159,11 @@
             "new_lines": ""
         },
         {
-            "key": "field_64ed873c39e16",
-            "label": "Featured image",
+            "key": "field_64edcc2d1d9ca",
+            "label": "featured_image",
             "name": "featured_image",
             "aria-label": "",
-            "type": "image",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -152,16 +172,11 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "url",
-            "library": "uploadedTo",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "preview_size": "medium"
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -182,5 +197,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1693289468
+    "modified": 1693813814
 }

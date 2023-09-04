@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dc9bb4e0cba3523782026fb1a3e5dad7",
+    "content-hash": "e8c1738d62c94fb5a40cfeb2070a5da3",
     "packages": [
         {
             "name": "brick/math",
@@ -6026,11 +6026,11 @@
         },
         {
             "name": "satispress/gravityforms",
-            "version": "2.7.10",
+            "version": "2.7.13",
             "dist": {
                 "type": "zip",
-                "url": "https://satispress.generodigital.com/satispress/gravityforms/2.7.10",
-                "shasum": "0f9cf62780e814c82bc7e99a89e8e2cc4ca32e24"
+                "url": "https://satispress.generodigital.com/satispress/gravityforms/2.7.13",
+                "shasum": "6098d552b24eb70b9bf65939820e42e6b202e66d"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -11042,6 +11042,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/debug-bar-remote-requests/"
+        },
+        {
+            "name": "wpackagist-plugin/featured-image-from-url",
+            "version": "4.4.6",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/featured-image-from-url/",
+                "reference": "tags/4.4.6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/featured-image-from-url.4.4.6.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/featured-image-from-url/"
         },
         {
             "name": "wpackagist-plugin/formidable",

@@ -3,6 +3,7 @@
 
 @php
 $variable = 0;
+d(get_post_meta(get_the_ID()));
 @endphp
 
 <article @php(post_class('alignwide entry'))>
