@@ -12,8 +12,9 @@
 	<?php echo esc_html(get_the_title()); ?>
 
 	</h3>
-	<p><?php echo e(mb_strimwidth(get_field('content', get_the_ID()), 0, 100, "...")); ?></p>
-	<p><?php echo e(get_field('price_range', get_the_ID())); ?></p>
+	<p><?php echo e(mb_strimwidth(get_field('content', get_the_ID()), 0, 50, "...")); ?></p>
+	<p>Location: <?php echo e(get_field('location', get_the_ID())); ?></p>
+	<p>Price range: <?php echo e(get_field('price_range', get_the_ID())); ?></p>
 	<p>
 		<a class="teaser__readmore teaser__link" href="<?php echo e(get_permalink()); ?>">
 			<span><?php echo e(__('Explore More', 'gds')); ?></span>

@@ -36,7 +36,7 @@
   width: 100%;
 
   > :only-child {
-    height: 100%;
+    height: fit-content;
   }
 }
 

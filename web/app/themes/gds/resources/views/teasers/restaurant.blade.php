@@ -10,8 +10,9 @@
 	<h3 class="teaser__title">
 	{!! esc_html(get_the_title()) !!}
 	</h3>
-	<p>{{mb_strimwidth(get_field('content', get_the_ID()), 0, 100, "...")}}</p>
-	<p>{{get_field('price_range', get_the_ID())}}</p>
+	<p>{{mb_strimwidth(get_field('content', get_the_ID()), 0, 50, "...")}}</p>
+	<p>Location: {{get_field('location', get_the_ID())}}</p>
+	<p>Price range: {{get_field('price_range', get_the_ID())}}</p>
 	<p>
 		<a class="teaser__readmore teaser__link" href="{{ get_permalink() }}">
 			<span>{{ __('Explore More', 'gds') }}</span>

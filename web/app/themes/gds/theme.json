@@ -114,8 +114,7 @@
     "blocks": {
       "core/heading": {
         "color": {
-          "custom": false,
-          "palette": []
+          "custom": false
         },
         "typography": {
           "fontSizes": [
@@ -149,8 +148,7 @@
       },
       "core/paragraph": {
         "color": {
-          "custom": false,
-          "palette": []
+          "custom": false
         }
       },
       "core/button": {
