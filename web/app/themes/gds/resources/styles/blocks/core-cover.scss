@@ -2,6 +2,10 @@
   box-sizing: border-box;
   padding: var(--grid-gutter);
 
+  &-full-screen {
+    min-height: calc(100vh - 95px);
+  }
+
   &.alignfull {
     padding-left: var(--viewport-gutter);
     padding-right: var(--viewport-gutter);
