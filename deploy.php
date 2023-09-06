@@ -139,15 +139,15 @@ task('build', [
 /**
  * Cache clearing
  */
-desc('Clear caches');
-task('cache:clear', [
-    'cache:clear:kinsta',
-    'cache:clear:wp:wpsc',
-    // 'cachetool:clear:opcache',
-    'cache:clear:wp:objectcache',
-    'cache:clear:wp:acorn',
-    // 'cache:wp:acorn',
-]);
+// desc('Clear caches');
+// task('cache:clear', [
+//     // 'cache:clear:kinsta',
+//     // 'cache:clear:wp:wpsc',
+//     // 'cachetool:clear:opcache',
+//     // 'cache:clear:wp:objectcache',
+//     // 'cache:clear:wp:acorn',
+//     // 'cache:wp:acorn',
+// ]);
 
 task('deploy:update_code', function () {
     // Do not store the git repository on remote.
@@ -157,9 +157,9 @@ desc('Deploy release');
 task('deploy', [
     'deploy:prepare',
     'build',
-    'rsync:warmup',
-    'rsync',
-    'deploy:publish',
+    // 'rsync:warmup',
+    // 'rsync',
+    // 'deploy:publish',
 ]);
 
 after('deploy:failed', 'deploy:unlock');

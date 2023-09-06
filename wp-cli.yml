@@ -27,7 +27,7 @@ require:
   url: staging-gdsbedrock-staging.kinsta.cloud
 
 '@production':
-  ssh: gdsbedrock@35.228.245.82:32263/www/gdsbedrock_154/public/current/web/wp
-  url: gdsbedrock.kinsta.cloud
+  ssh: kasperiktge22a@94.237.12.38/home/kasperiktge22a/public_html/wordpress/web/wp
+  url: wordpress.kasperb.vlab.fi
   # bin_path: $HOME/.config/composer/vendor/bin
   # php_path: /usr/bin/php72

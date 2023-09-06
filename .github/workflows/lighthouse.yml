@@ -4,12 +4,12 @@ on:
     inputs:
       urls:
         type: string
-        default: https://gdsbedrock.kinsta.cloud/
+        default: https://wordpress.kasperb.vlab.fi/
   workflow_dispatch:
     inputs:
       urls:
         description: 'URL'
-        default: https://gdsbedrock.kinsta.cloud/
+        default: https://wordpress.kasperb.vlab.fi/
 env:
   AUDIT_DELAY: 60
 

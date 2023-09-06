@@ -23,4 +23,4 @@ jobs:
     needs: deploy
     uses: ./.github/workflows/e2e.yml
     with:
-      url: 'https://staging-gdsbedrock.kinsta.cloud'
+      url: 'https://wordpress.kasperb.vlab.fi'
