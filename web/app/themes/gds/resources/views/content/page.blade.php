@@ -1,5 +1,5 @@
-@if (!str_contains(get_the_content(), '</h1>'))
+{{-- @if (!str_contains(get_the_content(), '</h1>'))
   @include('partials.page-header')
-@endif
+@endif --}}
 
 @php(the_content())

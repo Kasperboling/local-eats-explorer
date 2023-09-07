@@ -17,11 +17,6 @@
                 ]); ?>
             
 
-<?php
-$variable = 0;
-d(get_post_meta(get_the_ID()));
-?>
-
 <article <?php (post_class('alignwide entry')); ?>>
     <?php echo $__env->make('partials.restaurant-header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 

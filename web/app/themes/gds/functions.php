@@ -97,16 +97,13 @@ function custom_action_after_apc($entry, $form)
     foreach ($created_posts as $post) {
         $post_id = $post['post_id'];
 
-        // Get the title and featured image URL from the form fields.
-        $title = get_field('title', $post_id);
-        // $title = 'nu ska vi testa';
+        // Get the featured image URL from the form fields.
         $featured_image_url = get_field('featured_image', $post_id);
         // $featured_image_url
 
         // Update the post-title.
         $post_data = array(
             'ID' => $post_id,
-            'post_title' => $title,
         );
 
         wp_update_post($post_data);
