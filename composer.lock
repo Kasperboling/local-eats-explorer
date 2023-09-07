@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7380ebc2aa46481f10f7d5af39e8c70d",
+    "content-hash": "1b102726830ed8f8a6214c3006b38c1b",
     "packages": [
         {
             "name": "brick/math",
@@ -10227,24 +10227,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/formidable/"
-        },
-        {
-            "name": "wpackagist-plugin/google-maps-easy",
-            "version": "1.11.9",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/google-maps-easy/",
-                "reference": "tags/1.11.9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/google-maps-easy.1.11.9.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/google-maps-easy/"
         },
         {
             "name": "wpackagist-plugin/google-tag-manager",

@@ -3,19 +3,22 @@
                     'blockName' => 'gds/breadcrumb',
                     'attrs' => array_merge(
                         ['name' => 'gds/breadcrumb'],
+                        
                     ),
                 ]); ?>
+            
+
+                <?php echo render_block([
+                    'blockName' => 'core/media-text',
+                    'attrs' => array_merge(
+                        ['name' => 'core/media-text'],
+                        
+                    ),
+                ]); ?>
+            
 
 <article <?php (post_class('alignwide entry')); ?>>
-  <header class="entry__header">
-    <?php echo $__env->make('partials.page-header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-                <?php echo render_block([
-                    'blockName' => 'gds/share',
-                    'attrs' => array_merge(
-                        ['name' => 'gds/share'],
-                    ),
-                ]); ?>
-  </header>
+  <?php echo $__env->make('partials.page-header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
   <div class="entry__content entry-content">
     <?php (the_content()); ?>

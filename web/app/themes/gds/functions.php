@@ -80,6 +80,7 @@ collect(['setup', 'filters', 'admin', 'helpers'])
 add_theme_support('sage');
 
 add_action('gform_after_submission_2', 'custom_action_after_apc', 10, 2);
+add_action('gform_after_submission_4', 'custom_action_after_apc', 10, 2);
 // (The _2 in the gform_after_submission is the form id.)
 
 function custom_action_after_apc($entry, $form)

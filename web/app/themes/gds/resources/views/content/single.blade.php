@@ -1,10 +1,8 @@
 @block('gds/breadcrumb')
+@block('core/media-text')
 
 <article @php(post_class('alignwide entry'))>
-  <header class="entry__header">
-    @include('partials.page-header')
-    @block('gds/share')
-  </header>
+  @include('partials.page-header')
 
   <div class="entry__content entry-content">
     @php(the_content())
