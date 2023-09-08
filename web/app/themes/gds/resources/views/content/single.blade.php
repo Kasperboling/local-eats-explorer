@@ -4,8 +4,14 @@
 <article @php(post_class('alignwide entry'))>
     @include('partials.page-header')
 
+    <?php
+    $fieldValueString = get_field('blog_content');
+    $fieldValues = explode('.', $fieldValueString);
+    ?>
     <div class="entry__content entry-content">
-        <p>@php(the_content())</p>
+      @foreach($fieldValues as $value)
+        <p>{{ $value }}.</p>
+      @endforeach
     </div>
 
     <aside class="entry__sidebar">

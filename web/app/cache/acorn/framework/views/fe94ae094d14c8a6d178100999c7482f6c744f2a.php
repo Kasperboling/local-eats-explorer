@@ -12,11 +12,7 @@
       <?php echo esc_html(get_the_title()); ?>
 
     </h3>
-
-    <?php if($excerpt = get_the_excerpt()): ?>
-      <p class="teaser__description"><?php echo $excerpt; ?></p>
-    <?php endif; ?>
-
+    <p><?php echo e(mb_strimwidth(get_field('blog_content', get_the_ID()), 0, 100, "...")); ?></p>
     <p>
       <a class="teaser__readmore teaser__link" href="<?php echo e(get_permalink()); ?>">
         <span><?php echo e(__('Read article', 'gds')); ?></span>

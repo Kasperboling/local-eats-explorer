@@ -10,11 +10,7 @@
     <h3 class="teaser__title">
       {!! esc_html(get_the_title()) !!}
     </h3>
-
-    @if ($excerpt = get_the_excerpt())
-      <p class="teaser__description">{!! $excerpt !!}</p>
-    @endif
-
+    <p>{{mb_strimwidth(get_field('blog_content', get_the_ID()), 0, 100, "...")}}</p>
     <p>
       <a class="teaser__readmore teaser__link" href="{{ get_permalink() }}">
         <span>{{ __('Read article', 'gds') }}</span>
