@@ -128,6 +128,18 @@ task('build:artifact', function () {
     runLocally("rsync -r --delete --links $exclude '{{build_path}}/' '{{build_artifact_dir}}/'");
 });
 
+task('deploy:send_zip', function () {
+    // Create a zip archive of the current release
+    runLocally("cd {{build_artifact_dir}} && zip -r kasper.zip .");
+
+    // Upload the zip file to the production server
+    runLocally("scp -i ~/.ssh/id_rsa {{build_artifact_dir}}/kasper.zip kasperiktge22a@94.237.12.38:{{deploy_path}}/wordpress/");
+});
+
+task('success', function () {
+    writeln('Success');
+});
+
 desc('Build release locally');
 task('build', [
     'build:setup',
@@ -136,31 +148,19 @@ task('build', [
     'build:artifact',
 ]);
 
-/**
- * Cache clearing
- */
-// desc('Clear caches');
-// task('cache:clear', [
-//     // 'cache:clear:kinsta',
-//     // 'cache:clear:wp:wpsc',
-//     // 'cachetool:clear:opcache',
-//     // 'cache:clear:wp:objectcache',
-//     // 'cache:clear:wp:acorn',
-//     // 'cache:wp:acorn',
-// ]);
-
 task('deploy:update_code', function () {
     // Do not store the git repository on remote.
 });
 
 desc('Deploy release');
 task('deploy', [
-    'deploy:prepare',
     'build',
-    // 'rsync:warmup',
-    // 'rsync',
-    // 'deploy:publish',
+    'deploy:send_zip',
 ]);
+
+after('deploy:failed', 'deploy:unlock');
+after('deploy:send_zip', 'deploy:unlock');
+after('deploy:send_zip', 'success');
 
 after('deploy:failed', 'deploy:unlock');
 // Clear the cache @todo setup
